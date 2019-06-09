@@ -1,0 +1,152 @@
+/*------------------
+	Main Window
+ -------------------*/
+
+#container-1 {
+	height: 660px;
+    width: 1400px;
+    margin: auto;
+}
+
+/*------------------
+	Header
+ -------------------*/
+
+#header {
+	height: 45px;
+	line-height: 45px;
+    width: 1400px;
+    background-color: #000000 /*#4A4A4A;*/
+}
+
+#lineid-1 {
+	height: 2px;
+    width: 1400px;
+    background-color: #4A4A4A;
+}
+
+
+#mapname {
+	font-family: Geneva, sans-serif;
+	font-size: 22pt;
+	color: white;
+	margin-left: 1%;
+}
+
+/*------------------
+	Map Window 
+ -------------------*/
+
+#mapid { 
+	margin: 0 auto;
+	height: 615px;
+	width: 75%;
+	float: left;
+}
+
+/*------------------
+	Separation
+ -------------------*/
+
+#lineid-2 {
+	height: 615px;
+    width: 0.15%;
+    margin: auto;
+    float: left;
+    background-color: #4A4A4A;
+}
+
+/*------------------
+	Info Window 
+ -------------------*/
+
+#citySearch {
+	margin-left: 6%;
+	margin-top: 4%
+}
+
+#result {
+	margin-left: 6%;
+	font-family: Courier;
+	font-size: 9pt;
+	color: white;
+}
+
+#dupe-list {
+	margin-left: 6%;
+	font-family: Courier;
+	font-size: 8pt;
+	color: white;
+}
+
+.dupes {
+	font-family: Courier;
+	font-size: 8pt;
+	color: white;
+}
+
+/*------------------
+	Data
+ -------------------*/
+
+#map-container {
+	height: 615px;
+    width: 24.85%;
+    margin: auto;
+    float: right;
+    background-color: #000000; /*#EEEEEE;*/
+}
+
+#infoid {
+	margin-top: 5%;
+	margin-left: 6%;
+	height: 360px;
+	width: 300px;
+	background-color: white;
+}
+
+#title {
+	margin-left: 6%;
+	font-family: Courier;
+	font-size: 12pt;
+	color: white; /*#54FF54 #FF55FF;*/
+	
+}
+
+#legend {
+	margin-left: 6%;
+	font-family: Courier;
+	font-size: 12pt;
+	color: white; /*#54FF54 #FF55FF;*/
+	
+}
+
+.hierInfo {
+	margin-left: 6%;
+	margin-right: 6%;
+	font-family: Courier;
+	font-size: 9pt;
+	color: white;
+	
+}
+
+/*------------------
+	Chart
+ -------------------*/
+
+#chartid {
+	margin-top: 6%;
+	margin-left: 6%;
+	height: 100px;
+	width: 300px;
+	background-color: white;
+}
+
+#tylerid {
+	height: 200px;
+	margin-left: 0%;
+	
+}
+
+
+

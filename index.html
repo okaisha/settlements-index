@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Leaflet Test</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
+</head>
+
+<body>
+
+<div id="container-1"> 
+
+	<div id="header"> 
+		<p id="mapname">SETTLEMENT HIERARCHY INDEX</p>
+	</div>
+
+	<div id="lineid-1"></div>	
+
+	<div id="mapid"></div>
+
+	<div id="lineid-2"></div>	
+
+	<div id="map-container">
+
+		<form id="citySearch">
+			<input id="searchFld" class="input" placeholder="Enter a city"></input>
+			<button id="searchBtn" class="button">Search</button>
+			<button id="clearBtn" class="button">Clear</button>
+		</form>
+		
+		<p id="result"></p>
+		<ul id="dupe-list"></ul>
+
+		<p id="title">What Is Settlement Hierarchy?</p>
+		<p id="details" class="hierInfo"><strong>Settlement Hierarchy</strong> refers to a methodology for classifying human settlements using population, density and/or other relevant criteria to determine logical settlement groupings. Though this criteria can be nuanced and complex, the simplest approach solely uses population counts to determine settlement categories. This project uses open data from <a href="http://www.geonames.org/">GeoNames.org</a> to classify and visualize all locations on Earth with populations over 5,000 into six categories: <strong>Megalopolis, Metropolis, Large City, City, Large Town, and Town</strong>. Enter a city in the search field above to find its settlement hierarchy classification.</p>
+
+		<p id="legend">Hierarchy Classifaction</p>
+
+		<div id="chartid">
+			<!-- <img id="tylerid" src="images/tyler.jpg" alt="No Tyler Today"> -->
+		</div>
+
+	</div>
+</div>	
+
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+  integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+  crossorigin=""></script>
+
+<script src="js/jquery-3.0.0.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
