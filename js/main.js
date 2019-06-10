@@ -22,12 +22,30 @@ $.when(cities).done(function(){
 	var geoCities = cities.responseJSON; //get the JSON response and save to variable
 	var features = geoCities.features; //get city names from here
 
+	/////////////// Find All City Names and Duplicates ///////////////
+
 	var cityNames = []; //create an array of cities
 	for(var i = 0; i < features.length; i++){
 		cityNames.push(features[i].properties.city_name);
-	}
+	};
 
-	var duplicates = ["Los Angeles","Paris","Vancouver","London","Cambridge"]; //find all duplicate cities
+	var citySorted = cityNames.slice().sort();                                    
+	var results = [];
+	
+	for (var i = 0; i < citySorted.length - 1; i++) {
+	    if (citySorted[i + 1] === citySorted[i]) {
+	        results.push(citySorted[i]);
+	    }
+	};
+
+	function unique(value, index, self) { 
+	    return self.indexOf(value) === index;
+	};
+
+	var duplicates = results.filter(unique);
+
+	console.log(results);
+	console.log(duplicates);
 
 	/////////////// Set Default Map Views ///////////////
 
