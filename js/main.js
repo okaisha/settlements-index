@@ -2,7 +2,6 @@
 /*
 var countries = $.ajax({
     url: 'https://gist.githubusercontent.com/okaisha/0e5227d8f1db659f4133ebe1bbc6c8e2/raw/ccb912f21f5fc29bf5984b9312def8c4fa7059a3/countries_WGS84.geojson',
-    //url: 'https://services.arcgis.com/B7NI2jUD81lCgSpx/arcgis/rest/services/Assignment_6_Spatial_Reference_Systems/FeatureServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=json',
     dataType: 'json',
     success: console.log('Countries has been loaded!')
 });*/
