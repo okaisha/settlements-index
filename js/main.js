@@ -130,8 +130,7 @@ $.when(cities).done(function(){
 					});
 				}		
 	
-	var [megalopolis, metropolis, largeCity, city, largeTown, town] = layers; //splits the layers array and assigns each index to it's own variable with name
-	map.addLayer(town);
+	var [megalopolis, metropolis, largeCity, city, largeTown, town] = layers;
 
 	var base = {
 		"Background": darkLayer
@@ -212,7 +211,7 @@ $.when(cities).done(function(){
 
 		index = cityNames.findIndex(citySearch);
 		
-		//if city is a duplicate present options and choose one
+		//If city is a duplicate present options and choose one
 		if(duplicates.includes(city) === true) { 
 
 			$('#result').html("Did you mean...");
@@ -240,7 +239,7 @@ $.when(cities).done(function(){
 					}
 				}
 		
-		} //if city exists retrieve lat-lng and fly to
+		} //If city exists retrieve lat-lng and fly to
 		  else if (duplicates.includes(city) === false && index >= 0){
 			lat = features[index].properties.latitude;
 			lng = features[index].properties.longitude;
@@ -248,11 +247,11 @@ $.when(cities).done(function(){
 
 			$('#result').html("");
 
-		} //if city does not exist give error message
+		} //If city does not exist give error message
 		  else if(index === -1){
 			$('#result').html(city + " was not found! <br> Please enter another city.");
 		}
-			//{icon: firefoxIcon}
+			
 	}	
 
 
