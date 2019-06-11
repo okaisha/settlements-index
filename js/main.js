@@ -117,7 +117,8 @@ $.when(cities).done(function(){
 						onEachFeature: function (feature, layer) {
                             layer.bindPopup("City: " + feature.properties.city_name + '<br>' + 
                             				"Country: " + feature.properties.country_1 + '<br>' + 
-                            				"Population: " + feature.properties.population.toLocaleString('en'));
+                            				"Population: " + feature.properties.population.toLocaleString('en') + '<br>' + 
+                            				"Hierarchy Class: " + feature.properties.hierarchy);
                         },
 					});
 				}		
