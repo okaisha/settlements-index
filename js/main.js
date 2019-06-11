@@ -1,10 +1,4 @@
 /////////////// Load All GeoJSON ///////////////
-/*
-var countries = $.ajax({
-    url: 'https://gist.githubusercontent.com/okaisha/0e5227d8f1db659f4133ebe1bbc6c8e2/raw/ccb912f21f5fc29bf5984b9312def8c4fa7059a3/countries_WGS84.geojson',
-    dataType: 'json',
-    success: console.log('Countries has been loaded!')
-});*/
 
 var cities = $.ajax({
     url: 'https://gist.githubusercontent.com/okaisha/ece04418ac04a1f46049b8381f391351/raw/e07cf4e580834df272570d2b20dcfa0df06ca82b/cities5000.geojson',
@@ -227,7 +221,7 @@ $.when(cities).done(function(){
 					console.log(lat + ", " + lng);
 				});
 
-			//loop through all cities and get lat-lng of each duplicate
+			//Loop through all cities and get lat-lng of each duplicate
 			for(var i = 0; i < cityNames.length; i++) { 
 				if(cityNames[i] === city) {
 					$('ul')
