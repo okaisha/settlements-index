@@ -182,7 +182,7 @@ $.when(cities).done(function(){
 
 	function addCity(){
 		marker = L.marker([lat, lng]); 
-		markers.addLayer(marker);
+		markers.addLayer(marker); //need to add popup with info
 		map.flyTo([lat,lng],5).addLayer(markers)
 	};
 
