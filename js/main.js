@@ -7,7 +7,7 @@ var countries = $.ajax({
 });*/
 
 var cities = $.ajax({
-    url: 'https://gist.githubusercontent.com/okaisha/ece04418ac04a1f46049b8381f391351/raw/d114f90ba6836d4006feda32a6a8a2b21130d36b/cities5000.geojson',
+    url: 'https://gist.githubusercontent.com/okaisha/ece04418ac04a1f46049b8381f391351/raw/e07cf4e580834df272570d2b20dcfa0df06ca82b/cities5000.geojson',
     dataType: 'json',
     success: console.log("Cities has been loaded!")
 });
@@ -42,9 +42,6 @@ $.when(cities).done(function(){
 	};
 
 	var duplicates = results.filter(unique);
-
-	console.log(results);
-	console.log(duplicates);
 
 	/////////////// Set Default Map Views ///////////////
 
@@ -125,12 +122,16 @@ $.when(cities).done(function(){
 						},
 						onEachFeature: function (feature, layer) {
                             layer.bindPopup("City: " + feature.properties.city_name + '<br>' + 
+                            				"Country: " + feature.properties.country_1 + '<br>' + 
                             				"Population: " + feature.properties.population.toLocaleString('en'));
                         },
 					});
 				}		
 	
 	var [megalopolis, metropolis, largeCity, city, largeTown, town] = layers;
+	map.addLayer(town);
+
+	console.log(features[0]);
 
 	var base = {
 		"Background": darkLayer
@@ -230,7 +231,7 @@ $.when(cities).done(function(){
 			for(var i = 0; i < cityNames.length; i++) { 
 				if(cityNames[i] === city) {
 					$('ul')
-						.append('<li>' + features[i].properties.city_name + ": " + i + '</li>')
+						.append('<li>' + features[i].properties.city_name + ", " + features[i].properties.country_1 + '</li>')
 						.children('li:last-child')
 						.addClass('.dupes')
 						.data( {"lat": features[i].properties.latitude, 
