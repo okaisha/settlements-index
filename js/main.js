@@ -124,9 +124,10 @@ $.when(cities).done(function(){
 				}		
 	
 	var [megalopolis, metropolis, largeCity, city, largeTown, town] = layers;
-	map.addLayer(town);
+	map.addLayer(city);
+	map.addLayer(metropolis);
+	map.addLayer(megalopolis);
 
-	console.log(features[0]);
 
 	var base = {
 		"Background": darkLayer
