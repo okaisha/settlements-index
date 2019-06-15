@@ -105,7 +105,7 @@
 	background-color: white;
 }
 
-#title {
+.title {
 	margin-left: 6%;
 	font-family: Courier;
 	font-size: 12pt;
@@ -121,7 +121,7 @@
 	
 }
 
-.hierInfo {
+.info {
 	margin-left: 6%;
 	margin-right: 6%;
 	font-family: Courier;
@@ -131,8 +131,14 @@
 }
 
 /*------------------
-	Chart
+	Legend
  -------------------*/
+
+.legend {
+	
+}
+
+/*------------------
 
 #chartid {
 	margin-top: 6%;
@@ -147,6 +153,8 @@
 	margin-left: 0%;
 	
 }
+
+ -------------------*/
 
 
 

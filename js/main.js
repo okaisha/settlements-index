@@ -144,6 +144,7 @@ $.when(cities).done(function(){
 	
 	L.control.layers(base,cityOverlay).addTo(map);
 
+
 	/////////////// Dynamically Set Radius with Zoom Level ///////////////
 	
 	map.on('zoomend',function(){
@@ -173,6 +174,19 @@ $.when(cities).done(function(){
 			});
 		}
 	});
+
+
+	/////////////// Make a Legend ///////////////
+
+	var legend = L.control({position: 'bottomright'});
+
+	legend.onAdd = function (map) {
+		var div = L.DomUtil.create('div', 'legend');
+		return div;
+	}
+
+	legend.addTo(map);
+
 
 	/////////////// Search and Clear Cities ///////////////
 
