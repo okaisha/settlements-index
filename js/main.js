@@ -177,25 +177,34 @@ $.when(cities).done(function(){
 
 
 	/////////////// Make a Legend ///////////////
-	/*
+	
 	var legend = L.control({position: 'bottomright'});
 
 	legend.onAdd = function (map) {
 		
 		var legendDiv = L.DomUtil.create('div', 'legend');	
-		$('legendDiv').html('<h4 id="legend-title"><strong>Levels</strong></h4>');
+		legendDiv.innerHTML = '<h4 id="legend-title"><strong>Hierarchy Classes</strong></h4>';
 
-		//legendDiv.innerHTML = '<h4 id="legend-title"><strong>Levels</strong></h4>';
+		var labels = [
+			"Megalopolis: 10mil+",
+			"Metropolis: 1mil - 10mil",
+			"Large City: 300k - 1mil",
+			"City: 100k - 300k",
+			"Large Town: 20k - 100k",
+			"Town: 5k - 20k"
+			];
 
-		var legendCircle;
-		legendCircle = L.DomUtil.create('div', 'circleBase type1');
+		var colors = ["#FE37F5","#FB5ECF","#F986A9","#F6AE83","#F4D65D","#F2FE37"];
+		
+		for (var i = 0; i < labels.length; i++){
+				legendDiv.innerHTML += '<div class="circle" style="background: ' + colors[i] + ' "></div><span class="text">' + labels[i] + '</span>' + '<br>';
+			} 
 		
 		return legendDiv;		
+
 	};
 
-	console.log(legend);
 	legend.addTo(map);
-	*/
 
 	/////////////// Search and Clear Cities ///////////////
 

@@ -3,7 +3,7 @@
  -------------------*/
 
 #container-1 {
-	height: 660px;
+	height: auto; /*660px;*/
     width: auto;
     margin: auto;
 }
@@ -97,14 +97,6 @@
     background-color: #000000; /*#EEEEEE;*/
 }
 
-#infoid {
-	margin-top: 5%;
-	margin-left: 6%;
-	height: 360px;
-	width: 300px;
-	background-color: white;
-}
-
 .title {
 	margin-left: 6%;
 	margin-top: 8%;
@@ -125,7 +117,7 @@
 
 /*------------------
 	Chart
- -------------------*/
+ 
 #chartid {
 	margin-left: 5%;
 	margin-top: auto;
@@ -139,4 +131,55 @@
 	width: auto;
 	margin: auto;
 }
+
+-------------------*/
+
+/*------------------
+	Legend
+ -------------------*/
+
+.legend {
+	padding: 6px 10px;
+	height: 130px;
+	width: 160px;
+	background: white;
+	border-radius: 5px;
+}
+
+#legend-title {
+	font-family: Geneva, sans-serif;
+	font-size: 9pt;
+	color: #363636;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 2%;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid orange;
+    margin-top: auto;
+    margin-left: 2.5%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.text {
+	font-family: Geneva, sans-serif;
+	font-size: 8pt;
+	color: #363636;
+	margin-left: 5%;
+	vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
 
