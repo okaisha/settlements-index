@@ -212,11 +212,23 @@ $.when(cities).done(function(){
 	var index;
 	var lat;
 	var lng;
+	var cty;
+	var cntry;
+	var pop;
+	var hier;
+
 	var marker;
 	var markers = L.layerGroup();
 
 	function addCity(){
-		marker = L.marker([lat, lng]); 
+		marker = L.marker([lat, lng])
+			.bindPopup(
+				"City: " + cty + '<br>' + 
+				"Country: " + cntry + '<br>' +
+				"Population: " + pop.toLocaleString('en') + '<br>' + 
+				"Hierarchy Class: " + hier
+			); 
+		
 		markers.addLayer(marker); //need to add popup with info
 		map.flyTo([lat,lng],5).addLayer(markers)
 	};
@@ -248,12 +260,18 @@ $.when(cities).done(function(){
 			$('ul').on('click', 'li', function(e){ 
 					lat = $(e.target).data("lat");
 					lng = $(e.target).data("lng");
+					cty = $(e.target).data("cty");
+					cntry = $(e.target).data("cntry");
+					pop = $(e.target).data("pop");
+					hier = $(e.target).data("hier");
 					addCity(); //gives at lat-lng error after the first marker for this part but still works
 
 					$('#result').html("");
 					$('ul').empty();
 
 					console.log(lat + ", " + lng);
+					console.log(cty, cntry, pop, hier);
+
 				});
 
 			//Loop through all cities and get lat-lng of each duplicate
@@ -266,7 +284,11 @@ $.when(cities).done(function(){
 						.children('li:last-child')
 						.addClass('.dupes')
 						.data( {"lat": features[i].properties.latitude, 
-								"lng": features[i].properties.longitude
+								"lng": features[i].properties.longitude,
+								"cty": features[i].properties.city_name,
+								"cntry": features[i].properties.country_1,
+								"pop": features[i].properties.population,
+								"hier": features[i].properties.hierarchy
 							});
 				} //If city is not in US return City, Country
 				  else if(cityNames[i] === city && features[i].properties.country_1 !== "United States") {
@@ -275,7 +297,11 @@ $.when(cities).done(function(){
 						.children('li:last-child')
 						.addClass('.dupes')
 						.data( {"lat": features[i].properties.latitude, 
-								"lng": features[i].properties.longitude
+								"lng": features[i].properties.longitude,
+								"cty": features[i].properties.city_name,
+								"cntry": features[i].properties.country_1,
+								"pop": features[i].properties.population,
+								"hier": features[i].properties.hierarchy
 							});
 					}
 				}
@@ -284,6 +310,10 @@ $.when(cities).done(function(){
 		  else if (duplicates.includes(city) === false && index >= 0){
 			lat = features[index].properties.latitude;
 			lng = features[index].properties.longitude;
+			cty = features[index].properties.city_name;
+			cntry = features[index].properties.country_1;
+			pop = features[index].properties.population;
+			hier = features[index].properties.hierarchy
 			addCity();
 
 			$('#result').html("");
@@ -294,7 +324,6 @@ $.when(cities).done(function(){
 		}
 			
 	}	
-
 
 	$('#searchBtn').on('click', function(e){
 		e.preventDefault();
