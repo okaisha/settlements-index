@@ -1,7 +1,7 @@
 /////////////// Load All GeoJSON ///////////////
 
 var cities = $.ajax({
-    url: 'https://gist.githubusercontent.com/okaisha/ece04418ac04a1f46049b8381f391351/raw/e07cf4e580834df272570d2b20dcfa0df06ca82b/cities5000.geojson',
+    url: 'https://gist.githubusercontent.com/okaisha/77c59db61e3ebe55f48eb63a46184530/raw/dc2467a8339f4fba28d486fa5ff087ea7d0f150f/cities5000.geojson',
     dataType: 'json',
     success: console.log("Cities has been loaded!")
 });
@@ -15,6 +15,8 @@ $.when(cities).done(function(){
 	var geoCities = cities.responseJSON; //get the JSON response and save to variable
 	var features = geoCities.features; //get city names from here
 
+	console.log(features[47618]);
+
 	/////////////// Find All City Names and Duplicates ///////////////
 
 	var cityNames = []; //create an array of cities
@@ -22,7 +24,6 @@ $.when(cities).done(function(){
 		cityNames.push(features[i].properties.city_name);
 	};
 	
-
 	var citySorted = cityNames.slice().sort();                                    
 	var results = [];
 	
@@ -257,7 +258,18 @@ $.when(cities).done(function(){
 
 			//Loop through all cities and get lat-lng of each duplicate
 			for(var i = 0; i < cityNames.length; i++) { 
-				if(cityNames[i] === city) {
+				
+				//If city is in US return City, State
+				if(cityNames[i] === city && features[i].properties.country_1 === "United States"){
+					$('ul')
+						.append('<li>' + features[i].properties.city_name + ", " + features[i].properties.state + '</li>')
+						.children('li:last-child')
+						.addClass('.dupes')
+						.data( {"lat": features[i].properties.latitude, 
+								"lng": features[i].properties.longitude
+							});
+				} //If city is not in US return City, Country
+				  else if(cityNames[i] === city && features[i].properties.country_1 !== "United States") {
 					$('ul')
 						.append('<li>' + features[i].properties.city_name + ", " + features[i].properties.country_1 + '</li>')
 						.children('li:last-child')
